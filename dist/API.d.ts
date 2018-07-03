@@ -68,6 +68,7 @@ export declare class DynasticAccountsAPI {
             };
             USER: {
                 STATE_UPDATES: string;
+                DEVICE_CHECK: string;
             };
         };
         LEGAL: {

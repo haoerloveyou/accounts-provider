@@ -67,7 +67,8 @@ export const API_V0_ROUTES = prefix({
             PAYPAL_HOOK: "/paypal-webhook"
         }, "/transactions"),
         USER: prefix({
-            STATE_UPDATES: "/state-updates"
+            STATE_UPDATES: "/state-updates",
+            DEVICE_CHECK: "/device"
         }, "/user")
     }, "/internal"),
     LEGAL: prefix({

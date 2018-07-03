@@ -68,7 +68,8 @@ exports.API_V0_ROUTES = util_1.prefix({
             PAYPAL_HOOK: "/paypal-webhook"
         }, "/transactions"),
         USER: util_1.prefix({
-            STATE_UPDATES: "/state-updates"
+            STATE_UPDATES: "/state-updates",
+            DEVICE_CHECK: "/device"
         }, "/user")
     }, "/internal"),
     LEGAL: util_1.prefix({

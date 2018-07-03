@@ -11,4 +11,5 @@ export declare class DynasticAccountsAuthedAPI {
     createTransaction(request: Spec0.TransactionRequest): Promise<Spec0.Transaction>;
     getTransaction(id: string): Promise<Spec0.Transaction>;
     recheckTransaction(id: string): Promise<boolean>;
+    checkDevice(udid: string): Promise<boolean>;
 }

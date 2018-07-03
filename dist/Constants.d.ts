@@ -65,6 +65,7 @@ export declare const API_V0_ROUTES: {
         };
         USER: {
             STATE_UPDATES: string;
+            DEVICE_CHECK: string;
         };
     };
     LEGAL: {
