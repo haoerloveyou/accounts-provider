@@ -22,7 +22,7 @@ class DynasticAccountsAuthedAPI {
     }
     /* Transaction API */
     createTransaction(request) {
-        return ResponseUtils_1.extractBody(HTTPUtils_1.default.post({ url: this.api.API_V0.INTERNAL.TRANSACTIONS.BASE, headers: this.getHeaders() }));
+        return ResponseUtils_1.extractBody(HTTPUtils_1.default.post({ url: this.api.API_V0.INTERNAL.TRANSACTIONS.BASE, body: request, headers: this.getHeaders() }));
     }
     getTransaction(id) {
         return ResponseUtils_1.extractBody(HTTPUtils_1.default.get({ url: this.api.API_V0.INTERNAL.TRANSACTIONS.BASE + id, headers: this.getHeaders() }));

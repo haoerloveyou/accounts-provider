@@ -29,7 +29,7 @@ export class DynasticAccountsAuthedAPI {
     /* Transaction API */
 
     createTransaction(request: Spec0.TransactionRequest): Promise<Spec0.Transaction> {
-        return extractBody(HTTPUtils.post({url: this.api.API_V0.INTERNAL.TRANSACTIONS.BASE, headers: this.getHeaders()}));
+        return extractBody(HTTPUtils.post({url: this.api.API_V0.INTERNAL.TRANSACTIONS.BASE, body: request, headers: this.getHeaders()}));
     }
 
     getTransaction(id: string): Promise<Spec0.Transaction> {
