@@ -58,6 +58,7 @@ export interface TransactionRequest {
     sku: string;
     url: string;
     fields?: RequestField[];
+    redirectURL?: string | null;
 }
 export interface LinkedService {
     id: string;
