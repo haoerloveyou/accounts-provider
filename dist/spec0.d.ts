@@ -24,10 +24,20 @@ export interface Device {
     model?: string;
     suffix: string;
 }
+export declare type FieldType = "string" | "decimal" | "dollar";
+export declare type RequestFieldType = FieldType | "device" | "service";
 export interface Field {
     label: string;
     value: string;
-    type: "string" | "decimal" | "dollar";
+    type: FieldType;
+    backupValue?: string;
+    iconClass?: string;
+}
+export interface RequestField {
+    label: string;
+    value: string;
+    type: RequestFieldType;
+    iconClass?: string;
 }
 export declare type TransactionStatus = "created" | "approved" | "failed" | "pending" | "completed" | "refunded" | "denied";
 export interface Transaction {
@@ -47,7 +57,7 @@ export interface TransactionRequest {
     price: number;
     sku: string;
     url: string;
-    fields?: Field[];
+    fields?: RequestField[];
 }
 export interface LinkedService {
     id: string;
