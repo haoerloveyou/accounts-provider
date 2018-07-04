@@ -76,6 +76,7 @@ export declare const API_V0_ROUTES: {
 };
 export declare const ERROR_CODES: {
     BAD_REQUEST: number;
+    UNAUTHORIZED: number;
     FORBIDDEN: number;
     NOT_FOUND: number;
     RATE_LIMITED: number;
@@ -83,7 +84,6 @@ export declare const ERROR_CODES: {
     MISSING_FIELDS: number;
     INVALID_CREDENTIALS: number;
     UNAUTHENTICATED: number;
-    UNAUTHORIZED: number;
     PASSWORDS_MAY_NOT_MATCH: number;
     EMAIL_IN_USE: number;
     DEVICE_ALREADY_REGISTERED: number;

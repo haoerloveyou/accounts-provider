@@ -82,6 +82,7 @@ exports.API_V0_ROUTES = util_1.prefix({
 // TODO: find a better system for allocating error codes
 exports.ERROR_CODES = {
     BAD_REQUEST: 400,
+    UNAUTHORIZED: 401,
     FORBIDDEN: 403,
     NOT_FOUND: 404,
     RATE_LIMITED: 429,
@@ -89,7 +90,6 @@ exports.ERROR_CODES = {
     MISSING_FIELDS: 1001,
     INVALID_CREDENTIALS: 1002,
     UNAUTHENTICATED: 1003,
-    UNAUTHORIZED: 1004,
     PASSWORDS_MAY_NOT_MATCH: 1005,
     EMAIL_IN_USE: 1007,
     DEVICE_ALREADY_REGISTERED: 1008,
