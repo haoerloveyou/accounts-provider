@@ -31,8 +31,8 @@ class DynasticAccountsAuthedAPI {
         return ResponseUtils_1.extractSuccess(HTTPUtils_1.default.get({ url: this.api.API_V0.INTERNAL.TRANSACTIONS + id + "/recheck", headers: this.getHeaders() }));
     }
     /* Device Check API */
-    checkDevice(udid) {
-        return ResponseUtils_1.extractBoolean("verified", HTTPUtils_1.default.get({ url: this.api.API_V0.INTERNAL.USER.DEVICE_CHECK, query: { udid }, headers: this.getHeaders() }));
+    async checkDevice(udid) {
+        return (await ResponseUtils_1.extractBody(HTTPUtils_1.default.get({ url: this.api.API_V0.INTERNAL.USER.DEVICE_CHECK, query: { udid }, headers: this.getHeaders() }))).id;
     }
 }
 exports.DynasticAccountsAuthedAPI = DynasticAccountsAuthedAPI;

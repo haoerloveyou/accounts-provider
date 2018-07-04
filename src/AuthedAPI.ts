@@ -42,7 +42,7 @@ export class DynasticAccountsAuthedAPI {
 
     /* Device Check API */
 
-    checkDevice(udid: string): Promise<boolean> {
-        return extractBoolean("verified", HTTPUtils.get({url: this.api.API_V0.INTERNAL.USER.DEVICE_CHECK, query: { udid }, headers: this.getHeaders()}));
+    async checkDevice(udid: string): Promise<string | null> {
+        return (await extractBody(HTTPUtils.get({url: this.api.API_V0.INTERNAL.USER.DEVICE_CHECK, query: { udid }, headers: this.getHeaders()}))).id;
     }
 }
