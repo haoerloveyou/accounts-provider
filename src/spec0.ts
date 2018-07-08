@@ -37,6 +37,7 @@ export interface Field {
     backupValue?: string;
     iconClass?: string;
     href?: string;
+    blankTarget?: boolean;
 }
 
 export interface RequestField {
