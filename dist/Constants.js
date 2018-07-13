@@ -17,8 +17,7 @@ exports.API_V0_ROUTES = util_1.prefix({
         TOKEN: "/token",
         CLIENT: util_1.prefix({
             BASE: "/",
-            ID: "/:id",
-            CREATE: "/new"
+            ID: "/:id"
         }, "/client")
     }, "/oauth"),
     USER: util_1.prefix({
@@ -76,7 +75,44 @@ exports.API_V0_ROUTES = util_1.prefix({
         BASE: "/",
         TOS: "/tos",
         PRIVACY: "/privacy"
-    }, "/legal")
+    }, "/legal"),
+    ADMIN: util_1.prefix({
+        BASE: "/",
+        USERS: util_1.prefix({
+            BASE: "/",
+            IDS: util_1.prefix({
+                BASE: "/",
+                LOG: "/log",
+                GENERATE_PASSWORD_RESET_LINK: "/reset-password",
+                FORCE_VERIFY_EMAIL: "/verify-email",
+                BAN: "/ban",
+                ULTRABAN: "/ultraban"
+            }, "/:ids")
+        }, "/users"),
+        TRANSACTIONS: util_1.prefix({
+            BASE: "/",
+            ID: util_1.prefix({
+                BASE: "/",
+                REFUND: "/refund"
+            }, "/:id")
+        }, "/transactions"),
+        ACTIONS: "/actions",
+        BANS: util_1.prefix({
+            BASE: "/",
+            IP: util_1.prefix({
+                BASE: "/",
+                ID: "/:id"
+            }, "/ip"),
+            DEVICE: util_1.prefix({
+                BASE: "/",
+                ID: "/:id"
+            }, "/device")
+        }, "/bans"),
+        OAUTH_CLIENT: util_1.prefix({
+            BASE: "/",
+            ID: "/:id"
+        }, "/oauth/client")
+    }, "/admin")
 }, "/v0");
 // Error codes. For example, {BAD_USERNAME: 1001}
 // TODO: find a better system for allocating error codes

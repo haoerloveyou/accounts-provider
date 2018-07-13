@@ -14,7 +14,6 @@ export declare const API_V0_ROUTES: {
         CLIENT: {
             BASE: string;
             ID: string;
-            CREATE: string;
         };
     };
     USER: {
@@ -72,6 +71,43 @@ export declare const API_V0_ROUTES: {
         BASE: string;
         TOS: string;
         PRIVACY: string;
+    };
+    ADMIN: {
+        BASE: string;
+        USERS: {
+            BASE: string;
+            IDS: {
+                BASE: string;
+                LOG: string;
+                GENERATE_PASSWORD_RESET_LINK: string;
+                FORCE_VERIFY_EMAIL: string;
+                BAN: string;
+                ULTRABAN: string;
+            };
+        };
+        TRANSACTIONS: {
+            BASE: string;
+            ID: {
+                BASE: string;
+                REFUND: string;
+            };
+        };
+        ACTIONS: string;
+        BANS: {
+            BASE: string;
+            IP: {
+                BASE: string;
+                ID: string;
+            };
+            DEVICE: {
+                BASE: string;
+                ID: string;
+            };
+        };
+        OAUTH_CLIENT: {
+            BASE: string;
+            ID: string;
+        };
     };
 };
 export declare const ERROR_CODES: {

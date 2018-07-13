@@ -16,8 +16,7 @@ export const API_V0_ROUTES = prefix({
         TOKEN: "/token",
         CLIENT: prefix({
             BASE: "/",
-            ID: "/:id",
-            CREATE: "/new"
+            ID: "/:id"
         }, "/client")
     }, "/oauth"),
     USER: prefix({
@@ -75,7 +74,44 @@ export const API_V0_ROUTES = prefix({
         BASE: "/",
         TOS: "/tos",
         PRIVACY: "/privacy"
-    }, "/legal")
+    }, "/legal"),
+    ADMIN: prefix({
+        BASE: "/",
+        USERS: prefix({
+            BASE: "/",
+            IDS: prefix({
+                BASE: "/",
+                LOG: "/log",
+                GENERATE_PASSWORD_RESET_LINK: "/reset-password",
+                FORCE_VERIFY_EMAIL: "/verify-email",
+                BAN: "/ban",
+                ULTRABAN: "/ultraban"
+            }, "/:ids")
+        }, "/users"),
+        TRANSACTIONS: prefix({
+            BASE: "/",
+            ID: prefix({
+                BASE: "/",
+                REFUND: "/refund"
+            }, "/:id")
+        }, "/transactions"),
+        ACTIONS: "/actions",
+        BANS: prefix({
+            BASE: "/",
+            IP: prefix({
+                BASE: "/",
+                ID: "/:id"
+            }, "/ip"),
+            DEVICE: prefix({
+                BASE: "/",
+                ID: "/:id"
+            }, "/device")
+        }, "/bans"),
+        OAUTH_CLIENT: prefix({
+            BASE: "/",
+            ID: "/:id"
+        }, "/oauth/client")
+    }, "/admin")
 }, "/v0");
 
 // Error codes. For example, {BAD_USERNAME: 1001}
