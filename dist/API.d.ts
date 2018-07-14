@@ -79,10 +79,12 @@ export declare class DynasticAccountsAPI {
             BASE: string;
             USERS: {
                 BASE: string;
-                IDS: {
+                ID: {
                     BASE: string;
                     LOG: string;
                     GENERATE_PASSWORD_RESET_LINK: string;
+                };
+                IDS: {
                     FORCE_VERIFY_EMAIL: string;
                     BAN: string;
                     ULTRABAN: string;

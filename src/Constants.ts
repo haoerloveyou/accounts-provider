@@ -79,14 +79,16 @@ export const API_V0_ROUTES = prefix({
         BASE: "/",
         USERS: prefix({
             BASE: "/",
-            IDS: prefix({
+            ID: prefix({
                 BASE: "/",
                 LOG: "/log",
                 GENERATE_PASSWORD_RESET_LINK: "/reset-password",
+            }, "/:id"),
+            IDS: prefix({
                 FORCE_VERIFY_EMAIL: "/verify-email",
                 BAN: "/ban",
                 ULTRABAN: "/ultraban"
-            }, "/:ids")
+            }, "/batch/:ids")
         }, "/users"),
         TRANSACTIONS: prefix({
             BASE: "/",
@@ -109,7 +111,7 @@ export const API_V0_ROUTES = prefix({
         }, "/bans"),
         OAUTH_CLIENT: prefix({
             BASE: "/",
-            ID: "/:id"
+            ID: "/:id",
         }, "/oauth/client")
     }, "/admin")
 }, "/v0");

@@ -80,14 +80,16 @@ exports.API_V0_ROUTES = util_1.prefix({
         BASE: "/",
         USERS: util_1.prefix({
             BASE: "/",
-            IDS: util_1.prefix({
+            ID: util_1.prefix({
                 BASE: "/",
                 LOG: "/log",
                 GENERATE_PASSWORD_RESET_LINK: "/reset-password",
+            }, "/:id"),
+            IDS: util_1.prefix({
                 FORCE_VERIFY_EMAIL: "/verify-email",
                 BAN: "/ban",
                 ULTRABAN: "/ultraban"
-            }, "/:ids")
+            }, "/batch/:ids")
         }, "/users"),
         TRANSACTIONS: util_1.prefix({
             BASE: "/",
@@ -110,7 +112,7 @@ exports.API_V0_ROUTES = util_1.prefix({
         }, "/bans"),
         OAUTH_CLIENT: util_1.prefix({
             BASE: "/",
-            ID: "/:id"
+            ID: "/:id",
         }, "/oauth/client")
     }, "/admin")
 }, "/v0");
