@@ -2,6 +2,8 @@ import { Strategy as OAuth2Strategy, StrategyOptionsWithRequest, VerifyFunctionW
 
 import { DynasticAccountsAPI } from "./API";
 
+import * as Constants from "./Constants";
+
 /**
  * The Dynastic Accounts strategy authenticates requests by
  * using the Dynastic Accounts OAuth 2.0 API.
@@ -20,7 +22,7 @@ export class Strategy extends OAuth2Strategy {
      */
     constructor(options: StrategyOptions, verify: VerifyFunctionWithRequest) {
         // Setup endpoints
-        const apiURL = options.apiBaseURL || "https://accounts-api.dynastic.co", frontendURL = options.frontendBaseURL || "https://accounts.dynastic.co";
+        const apiURL = options.apiBaseURL || Constants.API_BASE, frontendURL = options.frontendBaseURL || Constants.FRONTEND_BASE;
         options.authorizationURL = options.authorizationURL || `${frontendURL}/authorize${options.firstParty === true ? "?forced_consent=true" : ""}`;
         options.tokenURL = options.tokenURL || `${apiURL}/v0/oauth/token`;
 

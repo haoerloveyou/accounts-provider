@@ -145,3 +145,5 @@ export declare const EMAIL_STATE: {
     CHANGING: number;
     NONE: number;
 };
+export declare const API_BASE = "https://accounts-api.dynastic.co";
+export declare const FRONTEND_BASE = "https://accounts.dynastic.co";

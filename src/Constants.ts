@@ -153,3 +153,6 @@ export const EMAIL_STATE = {
     CHANGING: 1, // changing email, waiting for verification
     NONE: 2 // initial email, waiting for verification
 }
+
+export const API_BASE = "https://accounts-api.dynastic.co";
+export const FRONTEND_BASE = "https://accounts.dynastic.co";

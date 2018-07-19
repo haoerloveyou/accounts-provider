@@ -152,3 +152,5 @@ exports.EMAIL_STATE = {
     CHANGING: 1,
     NONE: 2 // initial email, waiting for verification
 };
+exports.API_BASE = "https://accounts-api.dynastic.co";
+exports.FRONTEND_BASE = "https://accounts.dynastic.co";
